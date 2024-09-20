@@ -1,0 +1,493 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.page1 {
+    margin: 0;
+     width: 100vw;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+    /* overflow: hidden; */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffcc00;
+}
+
+.intro {
+    text-align: center;
+    color: #00ffcc;
+}
+
+.name, .tagline {
+    /* opacity: 0; */
+    transition: opacity 0.5s ease;
+    font-size: 4em;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.5em;
+}
+
+.scroll-indicator {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    font-size: 2em;
+    cursor: pointer;
+    animation: dance 1s infinite alternate;
+}
+
+@keyframes dance {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Particle Animation */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 255, 204, 0.8);
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+
+
+/* page 2 */
+.page2{
+    max-width: 100vw;
+}
+.about-section {
+    height: auto; /* Adjust as needed */
+    padding: 60px 20px; /* Add padding for spacing */
+    background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+    color: #00ffcc;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #00ffcc;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+    margin-bottom: 20px;
+}
+
+.about-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.about-description {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.tech-stack {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between skill circles */
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px; /* Circle diameter */
+    height: 100px; /* Circle diameter */
+    border-radius: 50%;
+    background: rgba(0, 255, 204, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+    transition: transform 0.3s;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+}
+
+.skill-icon {
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+    margin-bottom: 5px;
+}
+
+.skill span {
+    color: #00ffcc;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+/* .page3 */
+.projects-section {
+    height: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+    color: #00ffcc;
+    text-align: center;
+}
+
+.projects-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    animation: fadeIn 1s forwards;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Optional: Limit max width for larger screens */
+}
+
+.project-card {
+    background: rgba(0, 255, 204, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s forwards;
+    display: flex;
+    flex-direction: column; /* Ensure vertical stacking */
+    position: relative;
+}
+
+.project-image-container {
+    height: 150px; /* Adjust as necessary */
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+}
+
+.project-info {
+    padding: 15px;
+    flex-grow: 1; /* Allow the info section to grow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out content */
+}
+
+.project-info h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.project-info p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #00ffcc;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.project-link:hover {
+    background: #ffcc00;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* page4  */
+
+.contact-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+    color: #00ffcc;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    animation: fadeIn 1s forwards;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px; /* Limit max width for larger screens */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between form elements */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align labels and inputs */
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background: rgba(0, 255, 204, 0.3);
+    transform: scale(1.01); /* Slightly grow on focus */
+    outline: none; /* Remove default outline */
+}
+
+.form-group textarea {
+    height: 100px; /* Set a fixed height for textarea */
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background: #00ffcc;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background: #ffcc00;
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #00ffcc;
+    background: rgba(0, 255, 204, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.social-icon img {
+    width: 40px; /* Icon size */
+    height: 40px;
+    margin-bottom: 5px; /* Space between icon and text */
+}
+
+.social-icon span {
+    font-size: 1em; /* Text size */
+    font-weight: bold;
+}
+
+.social-icon:hover {
+    background: rgba(0, 255, 204, 0.3); /* Change background on hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+
+
+
+
+
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ffcc;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.footer-links {
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: #00ffcc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffcc00;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    .social-icon {
+        padding: 0;
+        flex: 1 1 30%; /* Allow three icons per row */
+        max-width: 30%; /* Set a max width */
+    }
+    .insta{
+        display: none;
+    }
+    .page1{
+     overflow-x: hidden;
+    }
+    
+    /* This will ensure the 4th and 5th icons fit into the next row */
+    .social-icon:nth-child(n+4) {
+        flex: 1 1 45%; /* Allow two icons in the next row */
+        max-width: 45%; /* Set a max width */
+    }
+}
